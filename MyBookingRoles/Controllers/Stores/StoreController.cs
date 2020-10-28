@@ -18,7 +18,7 @@ namespace Studio45.Controllers.Store
 
         // GET: StoreHome
 
-        public ActionResult ProdCatalogue(string movieGenre, string searchWord)
+        public ActionResult ProdCatalogue(string catName,string movieGenre, string searchWord)
         {
             var GenreLst = new List<string>();
 
@@ -46,6 +46,11 @@ namespace Studio45.Controllers.Store
                 movies = movies.Where(x => x.Brand.Name == movieGenre);
             }
 
+            if(!String.IsNullOrEmpty(catName))
+            {
+                movies = movies.Where(c => c.Category.CategoryName == movieGenre);
+            }
+
             return View(movies);
         }
 
@@ -67,13 +72,13 @@ namespace Studio45.Controllers.Store
         // GET: BrandCatalogue
         public ActionResult BrandCatalogue(string searchWord)
         {
-            return View(db.Brands.Where(p => p.Name.Contains(searchWord) || searchWord == null && p.isVisible == true).ToList());
+            return View(db.Brands.Where(p => p.Name.Contains(searchWord) || searchWord == null || p.isVisible == true).ToList());
         }
 
         // GET: CategoryCatalogue
         public ActionResult CategoryCatalogue(string searchWordC)
         {
-            return View(db.Category.Where(p => p.CategoryName.Contains(searchWordC) || searchWordC == null && p.isVisible == true).ToList());
+            return View(db.Category.Where(p => p.CategoryName.Contains(searchWordC) || searchWordC == null || p.isVisible == true).ToList());
         }
     }
 }

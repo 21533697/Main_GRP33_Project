@@ -5,6 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<scrtipt src="https://www.paypal.com/sdk/js?client_id=AawEljv71vFB1_wg6hMgPOh3CAmSWR7joi42INMYpQwXyI1_ywkClceG1j8FuMP4oAJXns_oN16fzQwe"> </scrtipt>
+<div id="paypal-button-container"></div>
+<script>
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            // This function sets up the details of the transaction, including the amount and line item details.
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '0.01'
+                    }
+                }]
+            });
+        },
+
+        onApprove: function (data, actions) {
+            // This function captures the funds from the transaction.
+            return actions.order.capture().then(function (details) {
+
+                // This function shows a transaction success message to your buyer.
+                alert('Transaction completed by ' + details.payer.given_name);
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+
 <h2><u>Check-Out : @ViewBag.User</u></h2>
 
 @{
@@ -69,15 +95,20 @@
             {
                 <table class="table table-responsive table-condensed">
                     <tr>
-                        <td colspan="2" style="text-align: center; background-color: gray;"><h3><u>Delivery Address</u></h3></td>
+                        <td colspan="2" style="text-align: center; background-color: gray;"><h3><u>Delivery Information</u></h3></td>
                     </tr>
                     <tr>
+                        <td></td>
                         <td>Total Amount</td>
                         <td>R <input type="text" name="TotalAmount" value="@s" readonly class="form-control" /></td>
                     </tr>
                     <tr>
                         <td>Customer Name</td>
                         <td>&nbsp; &nbsp; <input type="text" name="custName" required class="form-control" /></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>&nbsp; &nbsp; <input type="text" name="LastName" required class="form-control" /></td>
                     </tr>
                     <tr>
                         <td>Customer Phone</td>
@@ -87,29 +118,29 @@
                         <td>Customer Email</td>
                         <td>&nbsp; &nbsp; <input type="text" name="custEmail" readonly value="@ViewBag.User" class="form-control" /></td>
                     </tr>
+
+
                     <tr>
                         <td colspan="2" style="text-align: center; background-color: gray;"><h3><u>Delivery Address</u></h3></td>
                         
                     </tr>
                     <tr>
-                        <td>Street</td>
+                        <td></td>
+                        <td>Address <u>(House Number, Street Name)</u></td>
                         <td>&nbsp; &nbsp; <input type="text" name="Street" required class="form-control" /></td>
-                    </tr>
-                    <tr>
-                        <td>Suburb</td>
-                        <td>&nbsp; &nbsp; <input type="text" name="Suburb" required class="form-control" /></td>
                     </tr>
                     <tr>
                         <td>City</td>
                         <td>&nbsp; &nbsp; <input type="text" name="City" required class="form-control" /></td>
                     </tr>
-                    <tr>
-                        <td>Province</td>
-                        <td>&nbsp; &nbsp; <input type="text" name="Province" required class="form-control" /></td>
-                    </tr>
+                   
                     <tr>
                         <td>Country</td>
                         <td>&nbsp; &nbsp; <input type="text" name="Country" required class="form-control" /></td>
+                    </tr>
+                     <tr>
+                        <td>Zip-Code</td>
+                        <td>&nbsp; &nbsp; <input type="text" name="ZipCode" required class="form-control" /></td>
                     </tr>
                     
                 </table>

@@ -261,6 +261,10 @@
     <Compile Include="Migrations\202010261338572_nameP.Designer.cs">
       <DependentUpon>202010261338572_nameP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010281111043_Order_Alter.cs" />
+    <Compile Include="Migrations\202010281111043_Order_Alter.Designer.cs">
+      <DependentUpon>202010281111043_Order_Alter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -449,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010261338572_nameP.resx">
       <DependentUpon>202010261338572_nameP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010281111043_Order_Alter.resx">
+      <DependentUpon>202010281111043_Order_Alter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

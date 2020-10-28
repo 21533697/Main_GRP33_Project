@@ -118,10 +118,12 @@ namespace MyBookingRoles.Controllers.Store
                 CustomerName = frc["custName"],
                 CustomerPhone = frc["custPhone"],
                 CustomerEmail = frc["custEmail"],
-                CustomerAddress = frc["Street"] +","+ frc["Suburb"] + "," + frc["City"] + "," + frc["Province"],
+                CustomerAddress = frc["Street"] +","+ frc["City"] + "," + frc["Country"] + "," + frc["ZipCode"],
                 OrderDate = DateTime.Now,
                 PaymentType = "PayPal",
                 Status = "Processing",
+                //LastName = frc["LastName"],
+                
                 OrderName = frc["custName"] + "-" + DateTime.Now + "-" + System.Convert.ToDouble(frc["TotalAmount"])
             };
 
@@ -161,7 +163,7 @@ namespace MyBookingRoles.Controllers.Store
 
             Session.Remove("cart");
             Session.Remove("count");
-            return View("OrderSuccess",new { ord = order.OrderName});
+            return RedirectToAction("OrderSuccess",new { ord = order.OrderName});
             //Create a Add Statement for the modes
         }
 
