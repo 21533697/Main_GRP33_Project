@@ -18,16 +18,16 @@ namespace Studio45.Controllers.Store
 
         // GET: StoreHome
 
-        public ActionResult ProdCatalogue(string catName,string movieGenre, string searchWord)
+        public ActionResult ProdCatalogue(string catName,string BrandName, string searchWord)
         {
             var GenreLst = new List<string>();
 
-            var GenreQry = from d in db.Products
+            var Brandds = from d in db.Products
                            orderby d.Brand.Name
                            select d.Brand.Name;
 
             //
-            GenreLst.AddRange(GenreQry.Distinct());
+            GenreLst.AddRange(Brandds.Distinct());
             ViewBag.movieGenre = new SelectList(GenreLst);
 
             //
@@ -41,14 +41,14 @@ namespace Studio45.Controllers.Store
                 movies = movies.Where(s => s.ProductName.Contains(searchWord));
             }
 
-            if (!string.IsNullOrEmpty(movieGenre))
+            if (!string.IsNullOrEmpty(BrandName))
             {
-                movies = movies.Where(x => x.Brand.Name == movieGenre);
+                movies = movies.Where(x => x.Brand.Name == BrandName);
             }
 
             if(!String.IsNullOrEmpty(catName))
             {
-                movies = movies.Where(c => c.Category.CategoryName == movieGenre);
+                movies = movies.Where(c => c.Category.CategoryName == catName);
             }
 
             return View(movies);

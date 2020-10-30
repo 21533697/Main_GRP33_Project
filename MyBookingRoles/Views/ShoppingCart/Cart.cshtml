@@ -20,12 +20,6 @@
 <div class="form-inline" id="printdivcontent">
     @using (Html.BeginForm("Update", "ShoppingCart", FormMethod.Post))
     {
-    <div style="text-align: left; border-top: 2px solid black; background-color:gray; padding: 5px;">
-
-        <input type="submit" value="Update Quantity" class="btn btn-default btn-primary" />
-
-    </div>
-
         <br />
         <div class="table table-responsive table-hover table-condensed" style="border:2px solid gray; padding: 5px;">
             @if ((List<Item>)Session["cart"] != null)
@@ -55,6 +49,7 @@
                     </div>
 
                 }
+                
             }
             else
             {
@@ -70,6 +65,9 @@
             <h3 style="background-color: gray;">
                 Total Amount : <b>R @s</b>
             </h3>
+            <div style="text-align: left; border-top: 2px solid black; background-color:gray; padding: 5px;">
+                <input type="submit" value="Update Quantity" class="btn btn-default btn-primary" />
+            </div>
         </p>
     }
     <hr />

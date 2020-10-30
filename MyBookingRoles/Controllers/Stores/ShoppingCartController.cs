@@ -145,7 +145,8 @@ namespace MyBookingRoles.Controllers.Store
                     ProdId = cart1.Pr.ProductID,
                     Quantity = cart1.Quantity,
                     Price = cart1.Pr.Price,
-                    ProdName = cart1.Pr.ProductName
+                    ProdName = cart1.Pr.ProductName,
+                    DateOrdered = DateTime.Now
                  };
 
                 context.OrderDetails.Add(item1);

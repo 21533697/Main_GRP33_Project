@@ -265,6 +265,14 @@
     <Compile Include="Migrations\202010281111043_Order_Alter.Designer.cs">
       <DependentUpon>202010281111043_Order_Alter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010302037104_ProdsDateAdded.cs" />
+    <Compile Include="Migrations\202010302037104_ProdsDateAdded.Designer.cs">
+      <DependentUpon>202010302037104_ProdsDateAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010302053372_Date Time.cs" />
+    <Compile Include="Migrations\202010302053372_Date Time.Designer.cs">
+      <DependentUpon>202010302053372_Date Time.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -456,6 +464,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010281111043_Order_Alter.resx">
       <DependentUpon>202010281111043_Order_Alter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010302037104_ProdsDateAdded.resx">
+      <DependentUpon>202010302037104_ProdsDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010302053372_Date Time.resx">
+      <DependentUpon>202010302053372_Date Time.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

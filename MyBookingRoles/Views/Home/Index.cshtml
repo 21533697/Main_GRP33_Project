@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    var imgsrc = "";
 }
 
 <div class="jumbotron">
@@ -36,15 +37,98 @@
         <br />
         <hr />
         <div class="col-md-12" style="text-align:left">
+            
             <p><b><u>Products On Discount.</u></b></p>
+            
+            <br />
+            <div class="row" style="padding: 5px; background-color: white;">
+                @*@Html.ActionLink("View All Here", "#")*@
+                <br />
+                <div style="border-top: 1px solid green; padding: 5px 5px 5px 5px;">
+                    @if (ViewBag.Discounted != null)
+                    {
+                        foreach (var item in ViewBag.Discounted)
+                        {
+                            <div class="col-md-2" style="border-right: 2px solid black;">
+                                <div class="panel-primary" style="padding: 5px;">
+                                    @if (item.ProductPics != null)
+                                    {
+                                        var base64 = Convert.ToBase64String(item.ProductPics);
+                                        imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img src='@imgsrc' class="img-responsive" />
+                                </div>
+                                <div style="background-color: silver; text-align: center;">
+                                    <p>
+                                        <b><u>@item.ProductName | R @item.Price</u></b>
+                                    </p>
+                                    <p>
+                                        Available : <b style="color:blue;">@item.InStoreQuantity Item(s)</b><br />
+                                        <b style="color: red;">Discount : R @item.Price</b>
+                                    </p>
+                                    <div>
+                                        @Html.ActionLink("Order Now", "OrderNow", "ShoppingCart", new { id = item.ProductID }, new { @class = "btn btn-success" }) <br /><br />
+                                        @Html.ActionLink("Details", "ProductDetails", "Store", new { id = item.ProductID }, new { @class = "btn btn-success" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>
+                            There Are No Discounted Products Available.
+                        </p>
+                    }
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        <div class="col-md-12" style="text-align:left">
+            <p><b><u>Latest Products</u></b></p>
             <br />
 
             <div class="row" style="padding: 5px; background-color: white;">
-                @Html.ActionLink("View All Here", "#")
+                @*@Html.ActionLink("View All Here", "#")*@
                 <br />
-                <p style="border-top: 1px solid black;">
-                    List 10 Items
-                </p>
+                <div style="border-top: 1px solid black;">
+                    @if (ViewBag.Latest != null)
+                    {
+                        foreach (var item in ViewBag.Latest)
+                        {
+                            <div class="col-md-2" style="border-left: 2px solid black;  padding: 5px 5px 5px 5px;">
+                                <div class="panel-primary" style="padding: 5px;">
+                                    @if (item.ProductPics != null)
+                                    {
+                                        var base64 = Convert.ToBase64String(item.ProductPics);
+                                        imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img src='@imgsrc' class="img-responsive" />
+                                </div>
+                                <div style="background-color: silver; text-align: center;">
+                                    <p>
+                                        <b><u>@item.ProductName | R @item.Price</u></b>
+                                    </p>
+                                    <p>
+                                        Available : <b style="color:blue;">@item.InStoreQuantity Item(s)</b><br />
+                                        <b style="color: red;">Discount : R @item.Price</b>
+                                    </p>
+                                    <div>
+                                        @Html.ActionLink("Order Now", "OrderNow", "ShoppingCart", new { id = item.ProductID }, new { @class = "btn btn-success" }) <br /><br />
+                                        @Html.ActionLink("Details", "ProductDetails", "Store", new { id = item.ProductID }, new { @class = "btn btn-success" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>
+                            There Are No Products Available.
+                        </p>
+                    }
+                </div>
             </div>
             <hr />
         </div>
@@ -54,11 +138,45 @@
             <br />
 
             <div class="row" style="padding: 5px; background-color: white;">
-                @Html.ActionLink("View All Here", "#")
+                @*@Html.ActionLink("View All Here", "#")*@
                 <br />
-                <p style="border-top: 1px solid black;">
-                    List 10 Items
-                </p>
+                <div style="border-top: 1px solid black;">
+                    @if (ViewBag.Featured != null)
+                    {
+                        foreach (var item in ViewBag.Featured)
+                        {
+                            <div class="col-md-2" style="border-right: 2px solid black;">
+                                <div class="panel-primary" style="padding: 5px;">
+                                    @if (item.ProductPics != null)
+                                    {
+                                        var base64 = Convert.ToBase64String(item.ProductPics);
+                                        imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img src='@imgsrc' class="img-responsive" />
+                                </div>
+                                <div style="background-color: silver; text-align: center;">
+                                    <p>
+                                        <b><u>@item.ProductName | R @item.Price</u></b>
+                                    </p>
+                                    <p>
+                                        Available : <b style="color:blue;">@item.InStoreQuantity Item(s)</b><br />
+                                        <b style="color: red;">Discount : R @item.Price</b>
+                                    </p>
+                                    <div>
+                                        @Html.ActionLink("Order Now", "OrderNow", "ShoppingCart", new { id = item.ProductID }, new { @class = "btn btn-success" }) <br /><br />
+                                        @Html.ActionLink("Details", "ProductDetails", "Store", new { id = item.ProductID }, new { @class = "btn btn-success" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>
+                            There Are No Featured Products.
+                        </p>
+                    }
+                </div>
             </div>
             <hr />
         </div>

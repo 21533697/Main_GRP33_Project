@@ -10,7 +10,7 @@ namespace MyBookingRoles.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext context;
+        private readonly ApplicationDbContext context;
 
 
         public HomeController()
@@ -20,7 +20,14 @@ namespace MyBookingRoles.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var pro = from m in context.Products
+                         where m.IsVisible == true && m.InStoreQuantity > 0
+                         select m;
+            ViewBag.Discounted = pro.Where(p => p.Discount != 0).ToList();
+            ViewBag.Latest = pro.OrderBy(p => p.DateAdded).ThenBy(p => p.ProductName).ToList();
+            ViewBag.Featured = pro.Where(p => p.IsFeatured != false && p.IsVisible == true).ToList();
+
+            return View(pro);
         }
 
         public ActionResult About()
@@ -52,14 +59,6 @@ namespace MyBookingRoles.Controllers
             ViewBag.Message = "Our Store Details Special page.";
             return View();
         }
-
-        /// <summary>
-        /// Booking
-        /// </summary>
-        /// <returns></returns>
-
-
-
         //
         protected override void Dispose(bool disposing)
         {

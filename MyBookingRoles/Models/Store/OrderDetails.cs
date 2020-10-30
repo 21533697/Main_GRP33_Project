@@ -16,6 +16,7 @@ namespace MyBookingRoles.Models.Store
         public string ProdName { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
+        public DateTime DateOrdered { get; set; }
 
 
         public virtual Order Orders { get; set; }

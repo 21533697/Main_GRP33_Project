@@ -36,7 +36,6 @@ namespace MyBookingRoles.Controllers.Stores
             db.Entry(ord).State = EntityState.Modified;
             db.SaveChangesAsync();
 
-
             return RedirectToAction("Index", new { id = ord.OrderId });
         }
 

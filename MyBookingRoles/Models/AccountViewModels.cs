@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyBookingRoles.Models
@@ -82,6 +83,9 @@ namespace MyBookingRoles.Models
 
         [Display(Name = "Role Name")]
         public string Name { get; set; }
+
+        [Display(Name = "DateCreated")]
+        public DateTime DateCreated { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -186,7 +186,7 @@ namespace MyBookingRoles.Controllers
             {
                 string cust = "Customer";
 
-                var user = new ApplicationUser { Name = cust, UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { Name = cust, UserName = model.Email, Email = model.Email, DateCreated = DateTime.Now };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -428,7 +428,7 @@ namespace MyBookingRoles.Controllers
 
                 //
                 string cust = "Customer";
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = cust };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = cust, DateCreated = DateTime.Now };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

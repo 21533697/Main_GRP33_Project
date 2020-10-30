@@ -52,5 +52,8 @@ namespace MyBookingRoles.Models.Store
 
         [Display(Name = "Product Dsicount")]
         public decimal Discount { get; set; }
+
+        [Display(Name = "Date Added")]
+        public DateTime DateAdded { get; set; }
     }
 }

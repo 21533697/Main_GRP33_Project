@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Security.Claims;
@@ -12,6 +13,8 @@ namespace MyBookingRoles.Models
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
+        public DateTime DateCreated { get; set; }
+
         //public virtual ICollection<IdentityRole> collection { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

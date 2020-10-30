@@ -51,7 +51,7 @@
         {
             foreach (var item in (List<Item>)Session["cart"])
             {
-                s = item.Price + item.Pr.Price * item.Quantity;
+                s = s + item.Pr.Price * item.Quantity;
                 <tr>
                     <td>@item.Pr.ProductName</td>
                     <td>R @item.Pr.Price</td>
@@ -59,7 +59,7 @@
                     <td>
                         R @(item.Pr.Price * item.Quantity)
                     </td>
-                    <td></td>
+                    <td>R @item.Pr.Discount</td>
                     <td style="text-align:center;">@Html.ActionLink("Remove Item", "Delete", "ShoppingCart", new { id = item.Pr.ProductID }, new { @class = "btn btn-danger" })</td>
                 </tr>
             }
@@ -79,7 +79,7 @@
     <br />
     <p>
         <h3 >
-            Total Amount : R @s
+            <u>Total Amount : R @s</u>
         </h3>
     </p>
 
@@ -145,10 +145,10 @@
                     
                 </table>
                 <hr />
-                <div class="form-group" >
+                <div class="form-group">
                     
                     <br />
-                    <input type="submit" value="Process Order" class="btn btn-success" />
+                    <input type="submit" value="Process Order" class="btn btn-success"/>
                 </div>
             }
         </div>

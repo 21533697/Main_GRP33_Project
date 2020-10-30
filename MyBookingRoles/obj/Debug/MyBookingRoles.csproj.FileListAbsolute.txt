@@ -3434,3 +3434,5 @@ C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBo
 C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.dll
 C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.pdb
 C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.Order_Alter.resources
+C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.ProdsDateAdded.resources
+C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.DateTime.resources
