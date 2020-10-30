@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<scrtipt src="https://www.paypal.com/sdk/js?client_id=AawEljv71vFB1_wg6hMgPOh3CAmSWR7joi42INMYpQwXyI1_ywkClceG1j8FuMP4oAJXns_oN16fzQwe"> </scrtipt>
+@*<scrtipt src="https://www.paypal.com/sdk/js?client_id=AawEljv71vFB1_wg6hMgPOh3CAmSWR7joi42INMYpQwXyI1_ywkClceG1j8FuMP4oAJXns_oN16fzQwe"> </scrtipt>
 <div id="paypal-button-container"></div>
 <script>
     paypal.Buttons({
@@ -29,7 +29,7 @@
             });
         }
     }).render('#paypal-button-container');
-</script>
+</script>*@
 
 <h2><u>Check-Out : @ViewBag.User</u></h2>
 
@@ -98,7 +98,7 @@
                         <td colspan="2" style="text-align: center; background-color: gray;"><h3><u>Delivery Information</u></h3></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        
                         <td>Total Amount</td>
                         <td>R <input type="text" name="TotalAmount" value="@s" readonly class="form-control" /></td>
                     </tr>
@@ -125,7 +125,7 @@
                         
                     </tr>
                     <tr>
-                        <td></td>
+                       
                         <td>Address <u>(House Number, Street Name)</u></td>
                         <td>&nbsp; &nbsp; <input type="text" name="Street" required class="form-control" /></td>
                     </tr>

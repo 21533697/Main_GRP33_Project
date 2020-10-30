@@ -94,7 +94,7 @@ namespace Studio45.Controllers.Store
         //// POST: Products/Edit/5
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "IsVisible,InStoreQuantity,Price")] Product product)
+        //public ActionResult Edit(Product product)
         //{
         //    if (ModelState.IsValid)
         //    {

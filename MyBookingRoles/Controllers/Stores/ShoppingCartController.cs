@@ -120,7 +120,7 @@ namespace MyBookingRoles.Controllers.Store
                 CustomerEmail = frc["custEmail"],
                 CustomerAddress = frc["Street"] +","+ frc["City"] + "," + frc["Country"] + "," + frc["ZipCode"],
                 OrderDate = DateTime.Now,
-                PaymentType = "PayPal",
+                PaymentType = "Cash",
                 Status = "Processing",
                 //LastName = frc["LastName"],
                 
@@ -170,6 +170,7 @@ namespace MyBookingRoles.Controllers.Store
         [Authorize(Roles = "Customer")]
         public ActionResult OrderSuccess()
         {
+
             return View();
         }
 

@@ -85,29 +85,29 @@
 </div>
 
 <div style="text-align:center;">
+    
+    <hr />
     @if (User.IsInRole("SuperAdmin"))
     {
-        <p>
+    <p>
+
+        @Html.ActionLink("Delete Order!", "DeleteOrder", "Orders", new { id = Model.OrderId }, new { @class = "btn btn-danger", @onclick = "return confirm('Are you sure you want to delete this order?');" })
+        |
+        @Html.ActionLink("Approve Order!", "ApproveOrder", "Orders", new { id = Model.OrderId }, new { @class = "btn btn-success" })
+        <hr />
+        <div style="text-align:left;">
             @Html.ActionLink("Back to Order List", "Index", "Orders", null, new { @class = "btn btn-primary" })
-            |
-            @if(Model.Status != "Approved")
-            {
-                @Html.ActionLink("Approve Order!", "ApproveOrder", "Orders", new { id = Model.OrderId }, new { @class = "btn btn-success" })
-            }
-            else
-            {
-                @Html.ActionLink("Delete Order!", "DeleteOrder", "Orders", new { id = Model.OrderId }, new { @class = "btn btn-danger", @onclick = "return confirm('Are you sure you want to delete this order?');" })
-
-            }
-
-        </p>
+        </div>
+    </p>
     }
     else
     {
         <p>
-            @Html.ActionLink("Back to My Orders", "customerOrders", "MyUser", null, new { @class = "btn btn-primary" })
-            |
             @Html.ActionLink("Cancel Order", "DeleteOrder", "MyUser", new { id = Model.OrderId }, new { @class = "btn btn-danger", @onclick = "return confirm('Are you sure you want to Cancel this order?');" })
+            <hr />
+            <div style="text-align:left;">
+                @Html.ActionLink("Back to My Orders", "customerOrders", "MyUser", null, new { @class = "btn btn-primary" })
+            </div>
         </p>
     }
 </div>
