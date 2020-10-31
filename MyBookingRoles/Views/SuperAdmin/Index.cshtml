@@ -83,37 +83,36 @@
             <h1 style="border: 1px solid black; text-align: center;  background-color: white;"><u>Booking Management</u></h1>
             <br />
             <br />
+            <div class="col-md-4" style="border-right: 1px solid black;">
+                <h3><u>Artist Management</u></h3>
+                <br />
+
+                <p>
+                    @Html.ActionLink("Manage Artists", "Index", "BookingManagement", null, new { @class = "btn btn-primary" })
+                    <hr />
+                    Manage Artists Here.
+                </p>
+            </div>
+            <div class="col-md-4" style="border-right: 1px solid black;">
+                <h3><u>Bookings Management</u></h3>
+                <br />
+
+                <p>
+                    @Html.ActionLink("Manage Bookings", "Bookings", "BookingManagement", null, new { @class = "btn btn-primary" })
+                    <hr />
+                    Manage Bookings Here.
+                </p>
+            </div>
+            <div class="col-md-4" style="border-right: 1px solid black;">
+                <h3><u>Internals Management</u></h3>
+                <br />
+
+                <p>
+                    @Html.ActionLink("Manage Bookings", "Internals", "BookingManagement", null, new { @class = "btn btn-primary" })
+                    <hr />
+                    Manage Bookings Internals Here.
+                </p>
+            </div>
         </div>
-        @*<div class="col-md-9" style="background-color: silver; padding:5px;">
-                <div class="col-md-4" style="border-right: 1px solid black;">
-                    <h4><u>Discounts</u></h4>
-                    <br />
-
-                    <p>
-                        @Html.ActionLink("Manage Discount", "#", "#", null, new { @class = "btn btn-danger" })
-                        <hr />
-                        Add Or remove Discount From a product.
-                    </p>
-                </div>
-                <div class="col-md-4" style="border-right: 1px solid black;">
-                    <h4><u>Specials</u></h4>
-                    <br />
-
-                    <p>
-                        @Html.ActionLink("Manage Specials", "#", "#", null, new { @class = "btn btn-danger" })
-                        <hr />
-                        Add Or remove Special From a product.
-                    </p>
-                </div>
-                <div class="col-md-4" style="border-right: 1px solid black;">
-                    <h4><u>Features</u></h4>
-                    <br />
-                    <p>
-                        @Html.ActionLink("Manage Features", "#", "#", null, new { @class = "btn btn-danger" })
-                        <hr />
-                        Add Or remove Features From a product.
-                    </p>
-                </div>
-            </div>*@
     </div>
 </div>

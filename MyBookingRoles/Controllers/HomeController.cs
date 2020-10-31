@@ -23,6 +23,7 @@ namespace MyBookingRoles.Controllers
             var pro = from m in context.Products
                          where m.IsVisible == true && m.InStoreQuantity > 0
                          select m;
+
             ViewBag.Discounted = pro.Where(p => p.Discount != 0).ToList();
             ViewBag.Latest = pro.OrderBy(p => p.DateAdded).ThenBy(p => p.ProductName).ToList();
             ViewBag.Featured = pro.Where(p => p.IsFeatured != false && p.IsVisible == true).ToList();

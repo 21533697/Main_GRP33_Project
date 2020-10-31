@@ -44,10 +44,10 @@ namespace MyBookingRoles.Models.Store
         public bool IsVisible { get; set; }
 
         //
-        [Display(Name = "Is Featured")]
+        [Display(Name = "Featured")]
         public bool IsFeatured { get; set; }
 
-        [Display(Name = "Is On Special")]
+        [Display(Name = "On Special")]
         public bool IsOnSpecial { get; set; }
 
         [Display(Name = "Product Dsicount")]

@@ -73,7 +73,15 @@
                         @Html.DisplayFor(modelItem => item.IsVisible)
                     </p>
                     <p>
-                        R : @Html.DisplayFor(modelItem => item.Price)
+                        R : @Html.DisplayFor(modelItem => item.Price) &nbsp;
+                        @if (item.IsFeatured == true)
+                        {
+                            @Html.DisplayNameFor(model => model.IsFeatured);
+                        }
+                        else
+                        {
+                            @Html.Display("---");
+                        }
                     </p>
                     <p>
                         Discount : <b style="color: red;">R @Html.DisplayFor(modelItem => item.Discount)</b>
@@ -86,17 +94,17 @@
 
                         @if (item.IsFeatured == false)
                         {
-                            @Html.ActionLink("Add To Feature", "AddToFeature", new { id = item.ProductID }, new { @class = "btn btn-danger" });<br /><br />
+                            @Html.ActionLink("Add To Feature", "AddToFeature", new { id = item.ProductID }, new { @class = "btn btn-primary" });<br /><br />
                         }
                         else if (item.IsFeatured == true)
                         {
-                            @Html.ActionLink("Cancel Feature", "#", new { id = item.ProductID }, new { @class = "btn btn-danger" });<br /><br />
+                            @Html.ActionLink("Cancel Feature", "CancelFeature", new { id = item.ProductID }, new { @class = "btn btn-danger" });<br /><br />
                         }
 
 
                         @if (item.Discount > 0)
                         {
-                            @Html.ActionLink("Cancel Special", "CancelSpecial", new { id = item.ProductID }, new { @class = "btn btn-primary" });
+                            @Html.ActionLink("Cancel Special", "CancelSpecial", new { id = item.ProductID }, new { @class = "btn btn-danger" });
                         }
                         else
                         {
@@ -120,3 +128,4 @@
         </div>
     </div>
 </div>
+

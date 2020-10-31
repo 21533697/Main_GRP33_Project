@@ -103,6 +103,11 @@ namespace MyBookingRoles.Controllers
                         //send him to Customer controller and index action
                         return RedirectToAction("Index", "MyUser");
                     }
+                    else if (roleNames.Contains("Artist"))
+                    {
+                        //send him to Artist System controller and index action
+                        return RedirectToAction("ArtistDashboard", "Artist");
+                    }
                     else if (roleNames.Contains("Delivery"))
                     {
                         //send him to Delivery System controller and index action
@@ -213,9 +218,6 @@ namespace MyBookingRoles.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
-        //Register roles moved to AppUsers
-
 
         //
         // GET: /Account/ConfirmEmail

@@ -55,11 +55,18 @@ namespace MyBookingRoles
                 roleManager.Create(Crole);
             }
 
-            //create Customer Role
+            //create Delivery Role
             if (!roleManager.RoleExists("Delivery"))
             {
-                var Crole = new IdentityRole("Delivery");
-                roleManager.Create(Crole);
+                var Drole = new IdentityRole("Delivery");
+                roleManager.Create(Drole);
+            }
+
+            //create Artist Role
+            if (!roleManager.RoleExists("Artist"))
+            {
+                var Arole = new IdentityRole("Artist");
+                roleManager.Create(Arole);
             }
         }
 

@@ -24,6 +24,9 @@
                 else if (User.IsInRole("SuperAdmin"))
                 {
                     @Html.ActionLink("SuperAdmin Foto45", "Index", "SuperAdmin", new { area = "" }, new { @class = "navbar-brand" })
+                }else if (User.IsInRole("Artist"))
+                {
+                    @Html.ActionLink("Artist Foto45", "ArtistDashboard", "Artist", new { area = "" }, new { @class = "navbar-brand" })
                 }
 
             </div>
@@ -52,6 +55,11 @@
                         {
                             <li></li>
                             <li>@Html.ActionLink("Delivery Profile", "SuperAdminProfile", "SuperAdmin")</li>
+                            <li></li>
+                        }else if (User.IsInRole("Artist"))
+                        {
+                            <li></li>
+                            <li>@Html.ActionLink("Artist Profile", "#", "#")</li>
                             <li></li>
                         }
                     }

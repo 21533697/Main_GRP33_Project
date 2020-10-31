@@ -59,13 +59,7 @@ namespace MyBookingRoles.Controllers.Stores
             //return View(db.Products.ToList());
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         // GET: Inventory AddQuantity
-
         public ActionResult AddQuantity(int? id)
         {
             if (id == null)
@@ -105,11 +99,7 @@ namespace MyBookingRoles.Controllers.Stores
             return View(id);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// //Specials
         public ActionResult AddToSpecial(int? id)
         {
             if (id == null)
@@ -171,10 +161,25 @@ namespace MyBookingRoles.Controllers.Stores
             return RedirectToAction("ListIndex", new { id = product.ProductID });
         }
 
-
+        //Features
         public ActionResult AddToFeature(int id)
         {
             Product product = db.Products.Find(id);
+
+            product.IsFeatured = true;
+            db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return RedirectToAction("ListIndex", new { id = product.ProductID });
+        }
+
+        public ActionResult CancelFeature(int id)
+        {
+            Product product = db.Products.Find(id);
+
+            product.IsFeatured = false;
+            db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
 
             return RedirectToAction("ListIndex", new { id = product.ProductID });
         }

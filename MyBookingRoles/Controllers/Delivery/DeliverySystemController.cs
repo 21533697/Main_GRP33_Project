@@ -1,4 +1,5 @@
-﻿using MyBookingRoles.Models;
+﻿using Microsoft.AspNet.Identity;
+using MyBookingRoles.Models;
 using MyBookingRoles.Models.Store;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace MyBookingRoles.Controllers.Delivery
 {
@@ -22,6 +24,8 @@ namespace MyBookingRoles.Controllers.Delivery
         public ActionResult AcceptOrder(int orderID)
         {
             Order ord = db.Orders.Find(orderID);
+
+            var userid = User.Identity.GetUserName().ToString();
             ord.Status = "Accepted";
             db.Entry(ord).State = EntityState.Modified;
             db.SaveChangesAsync();

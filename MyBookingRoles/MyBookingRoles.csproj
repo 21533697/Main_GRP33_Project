@@ -191,6 +191,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppUsersController.cs" />
+    <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Controllers\BookingsManagement\BookingManagementController.cs" />
     <Compile Include="Controllers\Delivery\DeliverySystemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -273,6 +275,10 @@
     <Compile Include="Migrations\202010302053372_Date Time.Designer.cs">
       <DependentUpon>202010302053372_Date Time.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010311046106_FeaturedProd.cs" />
+    <Compile Include="Migrations\202010311046106_FeaturedProd.Designer.cs">
+      <DependentUpon>202010311046106_FeaturedProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -301,6 +307,59 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Documents\MigrationPMC_Doc.txt" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Acce%3bpted orders.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Add product.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Addmin dashboard.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Admin order approval.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\App users.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Client Approved order.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Oder detail confirmed order.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order Detail Canceled.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order Detail new order awaiting approval.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order Detail new order awaiting approval2.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order Detail.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order list with new order approved orders.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order list with new order awaiting approval 3.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Order proccesing-or-Awaiting confirmation.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Product detail.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Product list.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Roles list.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2846%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2847%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2848%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2849%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2850%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2851%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2852%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2853%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2854%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2855%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2856%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2858%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2859%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2860%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2861%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2862%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2863%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2864%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2865%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2867%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2868%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2869%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2870%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshoots original\Screenshot %2871%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Screenshot %2845%29.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Shoping checkout part1.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Shoping checkout part2.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Update quantity of item.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Customer cart detail.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Customer Orders.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Email Order Notification.jpeg" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Inventory management.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Order list with new order awaiting approval.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Order list with new order awaiting approval2.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\used\Product catalog.png" />
+    <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Users with roles.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -309,6 +368,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Documents\Submission Docs\2020 ADPB301 Study Guide V2.pdf" />
     <Content Include="Documents\Submission Docs\Application form.docx" />
+    <Content Include="Documents\Submission Docs\Sprint 01\GRP33 SRS Inc 1.docx" />
+    <Content Include="Documents\Submission Docs\Sprint 01\GRP33 SRS Inc 1.pdf" />
     <None Include="Properties\PublishProfiles\StudioFoto45-StoreV2 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\StudioFoto45-StoreV2 - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\StudioFoto45-StoreV2 - Web Deploy.pubxml" />
@@ -404,6 +465,9 @@
     <Content Include="Views\Inventory\ListIndex.cshtml" />
     <Content Include="Views\Inventory\AddQuantity.cshtml" />
     <Content Include="Views\Inventory\AddToSpecial.cshtml" />
+    <Content Include="Views\BookingManagement\RegisterArtist.cshtml" />
+    <Content Include="Views\BookingManagement\Index.cshtml" />
+    <Content Include="Views\Artist\ArtistDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -419,6 +483,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Documents\Submission Docs\Sprint 02\" />
     <Folder Include="images\Site_Imaes\" />
     <Folder Include="Views\Discount\" />
   </ItemGroup>
@@ -470,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010302053372_Date Time.resx">
       <DependentUpon>202010302053372_Date Time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010311046106_FeaturedProd.resx">
+      <DependentUpon>202010311046106_FeaturedProd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

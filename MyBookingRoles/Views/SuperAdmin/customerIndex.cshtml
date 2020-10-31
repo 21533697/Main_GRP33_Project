@@ -46,8 +46,8 @@
             </td>
             <td>
                 @*@Html.ActionLink("Edit", "Edit","AppUsers", new { id = item.Id }, null) |*@
-                @Html.ActionLink("Details", "Details","AppUsers", new { id = item.Id }, null) |
-                @Html.ActionLink("Delete", "Delete","AppUsers", new { id = item.Id }, null)
+                @Html.ActionLink("Details", "Details","AppUsers", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Delete", "Delete","AppUsers", new { id = item.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

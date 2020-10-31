@@ -80,14 +80,14 @@ namespace MyBookingRoles.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user)
         {
-            var userId = _application.Users.Where(i => i.UserName == user.UserName).Select(i => i.Id);
-            string UpdateId = "";
+            var userId = _application.Users.Where(i => i.UserName == user.UserName).Select(i => i.Id).ToString();
+            //string UpdateId = "";
 
-            foreach (var i in userId)
-            {
-                UpdateId = i.ToString();
-            }
-            await this.UserManager.AddToRolesAsync(UpdateId, model.Name);
+            //foreach (var i in userId)
+            //{
+            //    UpdateId = i.ToString();
+            //}
+            await this.UserManager.AddToRolesAsync(userId, model.Name);
             return RedirectToAction("UsersWithRoles");
 
         }

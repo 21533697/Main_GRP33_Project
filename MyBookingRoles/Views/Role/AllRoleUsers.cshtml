@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityUser>
 
-@{
-    ViewBag.Title = "AllRoleUsers";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
-}
+@{ ViewBag.Title = "AllRoleUsers";
+                Layout = "~/Views/Shared/_UserLayout.cshtml"; }
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="box-title">
@@ -26,10 +24,10 @@
                     <td>
                         @item.Email
                     </td>
-                </tr>
-            }
+                </tr>            
+             }
         </table>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
     </div>
-    
+
 </div>

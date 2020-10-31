@@ -13,10 +13,10 @@
         </div>
         <!-- /.box-header -->
         <div class="panel-body">
-            <p>
+            @*<p>
                 @Html.ActionLink("Add New Role", "Create", "Role") |
                 @Html.ActionLink("Assign Role To User", "RegisterRole", "AppUsers")
-            </p>
+            </p>*@
 
             <table class="table table-hover table-bordered table-condensed" id="UsersWithRoles">
                 <thead>
@@ -36,7 +36,7 @@
             </table>
             <hr />
             <p>
-                @Html.ActionLink("Back To SuperADmin", "Index", "SuperAdmin")
+                @Html.ActionLink("Back To SuperADmin", "Index", "SuperAdmin", null, new { @class = "btn btn-primary" })
             </p>
         </div>
         

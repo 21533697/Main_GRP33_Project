@@ -18,8 +18,11 @@ namespace Studio45.Controllers.Store
 
         // GET: StoreHome
 
-        public ActionResult ProdCatalogue(string catName,string BrandName, string searchWord)
+        public ActionResult ProdCatalogue(string catName,string BrandName, string searchWord, int? page)
         {
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+
             var GenreLst = new List<string>();
 
             var Brandds = from d in db.Products
@@ -33,6 +36,7 @@ namespace Studio45.Controllers.Store
             //
             var movies = from m in db.Products
                          where m.IsVisible == true && m.InStoreQuantity > 0
+
                          select m;
 
             //
@@ -51,7 +55,8 @@ namespace Studio45.Controllers.Store
                 movies = movies.Where(c => c.Category.CategoryName == catName);
             }
 
-            return View(movies);
+            return View(movies.OrderBy(a=>a.ProductName).ToPagedList(pageNumber, pageSize));
+
         }
 
         // GET: ProductDetails

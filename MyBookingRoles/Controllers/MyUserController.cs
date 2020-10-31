@@ -74,6 +74,7 @@ namespace MyBookingRoles.Controllers
         public ActionResult DeleteUserConfirm(string id)
         {
             var usr = context.Users.Find(id);
+            
             context.Users.Remove(usr);
             context.SaveChanges();
             return RedirectToAction("Login", "Account");
