@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookingRoles.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,15 @@ namespace MyBookingRoles.Controllers
     [Authorize(Roles = "Artist")]
     public class ArtistController : Controller
     {
-        // GET: Artist
+        private ApplicationDbContext context = new ApplicationDbContext();
+
+
+        // GET: Artist All Artist Bookings
+        public ActionResult DeliveryIndex()
+        {
+            return View();
+        }
+
         public ActionResult ArtistDashboard()
         {
             return View();

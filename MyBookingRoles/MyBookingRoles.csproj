@@ -193,7 +193,8 @@
     <Compile Include="Controllers\AppUsersController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\BookingsManagement\BookingManagementController.cs" />
-    <Compile Include="Controllers\Delivery\DeliverySystemController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
+    <Compile Include="Controllers\DeliverySystem\DeliverySystemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyUserController.cs" />
@@ -279,6 +280,10 @@
     <Compile Include="Migrations\202010311046106_FeaturedProd.Designer.cs">
       <DependentUpon>202010311046106_FeaturedProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011011136520_Check.cs" />
+    <Compile Include="Migrations\202011011136520_Check.Designer.cs">
+      <DependentUpon>202011011136520_Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -306,6 +311,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Documents\Dummy.txt" />
     <Content Include="Documents\MigrationPMC_Doc.txt" />
     <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Acce%3bpted orders.png" />
     <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Add product.png" />
@@ -460,14 +466,16 @@
     <Content Include="Views\Store\BrandCatalogue.cshtml" />
     <Content Include="Views\Store\CategoryCatalogue.cshtml" />
     <Content Include="Views\Store\ProductDetails.cshtml" />
-    <Content Include="Views\SuperAdmin\DeliverySystemIndex.cshtml" />
-    <Content Include="Views\DeliverySystem\DeliveryDashboard.cshtml" />
+    <Content Include="Views\DeliverySystem\DeliverySystemIndex.cshtml" />
+    <Content Include="Views\Delivery\DeliveryDashboard.cshtml" />
     <Content Include="Views\Inventory\ListIndex.cshtml" />
     <Content Include="Views\Inventory\AddQuantity.cshtml" />
     <Content Include="Views\Inventory\AddToSpecial.cshtml" />
     <Content Include="Views\BookingManagement\RegisterArtist.cshtml" />
-    <Content Include="Views\BookingManagement\Index.cshtml" />
+    <Content Include="Views\BookingManagement\BookingManagementIndex.cshtml" />
     <Content Include="Views\Artist\ArtistDashboard.cshtml" />
+    <Content Include="Views\DeliverySystem\RegisterDelivery.cshtml" />
+    <Content Include="Views\BookingManagement\Internals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -538,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010311046106_FeaturedProd.resx">
       <DependentUpon>202010311046106_FeaturedProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011011136520_Check.resx">
+      <DependentUpon>202011011136520_Check.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

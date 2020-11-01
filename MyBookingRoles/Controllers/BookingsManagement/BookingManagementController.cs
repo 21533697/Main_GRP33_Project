@@ -53,12 +53,13 @@ namespace MyBookingRoles.Controllers.Bookings
                 _userManager = value;
             }
         }
+
+
         // GET: BookingManagement
-        public ActionResult Index()
+        public ActionResult BookingManagementIndex()
         {
             return View();
         }
-
 
         //Register Artist roles moved to AppUsers
         // GET: /Account/Register
@@ -112,6 +113,11 @@ namespace MyBookingRoles.Controllers.Bookings
             {
                 ModelState.AddModelError("", error);
             }
+        }
+
+        public ActionResult Internals()
+        {
+            return View();
         }
     }
 }

@@ -21,28 +21,28 @@
         @*<h1 style="text-align:center;"><u><b>Your General Options</b></u></h1>*@
         
         <br />
-        <div class="col-md-3">
+        <div class="col-md-3" style="border: 1px solid black;">
             <h2 style="background-color: gray; text-align: center; border: 1px solid black;">Menu</h2>
-            <br />
+            <hr />
             @Html.ActionLink("All My Orders", "customerOrders", "MyUser", null, new { @class = "btn btn-default" }) <br /><br />
-            @Html.ActionLink("Customer Help!", "#", "#", null, new { @class = "btn btn-danger" }) <br /><br />
+            @Html.ActionLink("All My Bookings", "#", "#", null, new { @class = "btn btn-danger" }) <br /><br />
         </div>
 
         <div style="background-color: white; padding: 15px; text-align:center; border-right: 1px solid black;" class="col-md-9">
             <div class="container">
 
                 <p style="padding: 5px 5px; border: 1px dashed gray;" class="col-md-4">
-                    @Html.ActionLink("Rate Our Delivery", "#", "Home", null, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Go to Store", "#", "Home", null, new { @class = "btn btn-danger" })
                     <br />
                     <br />
-                    Rate Your Delivery!
+                    View All Our Products!
                 </p>
 
                 <p style="padding: 5px 5px; border: 1px dashed gray;" class="col-md-4">
-                    @Html.ActionLink("Customer Support", "#", "CustomerSupport", null, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Make A Booking", "#", "#", null, new { @class = "btn btn-danger" })
                     <br />
                     <br />
-                    Your Subscription Deals Here!
+                    Book an Artist For your next Event!
                 </p>
             </div>
             <hr />

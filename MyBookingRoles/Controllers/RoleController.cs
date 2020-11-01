@@ -11,7 +11,7 @@ namespace MyBookingRoles.Controllers
     [Authorize(Roles = "SuperAdmin")]
     public class RoleController : Controller
     {
-        ApplicationDbContext context;
+        private ApplicationDbContext context;
 
         public RoleController()
         {
