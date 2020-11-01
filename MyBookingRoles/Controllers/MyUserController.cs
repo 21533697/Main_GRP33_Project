@@ -56,6 +56,8 @@ namespace MyBookingRoles.Controllers
             return RedirectToAction("customerOrders", new { id = ord.OrderId });
         }
 
+
+        //Service Rate
         public ActionResult RatingSerciveIndex()
         {
             var usr = User.Identity.GetUserName().ToString();

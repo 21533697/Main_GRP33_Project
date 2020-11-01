@@ -192,10 +192,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppUsersController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Controllers\BookingDir\BookingsController.cs" />
     <Compile Include="Controllers\BookingsManagement\BookingManagementController.cs" />
-    <Compile Include="Controllers\Booking\LocationsController.cs" />
-    <Compile Include="Controllers\Booking\PackagesController.cs" />
-    <Compile Include="Controllers\Booking\ServicesController.cs" />
+    <Compile Include="Controllers\BookingDir\LocationsController.cs" />
+    <Compile Include="Controllers\BookingDir\PackagesController.cs" />
+    <Compile Include="Controllers\BookingDir\ServicesController.cs" />
+    <Compile Include="Controllers\BookingsManagement\CustomerBookingController.cs" />
     <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\DeliverySystem\DeliverySystemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -231,12 +233,20 @@
     <Compile Include="Migrations\202011011333462_Check.Designer.cs">
       <DependentUpon>202011011333462_Check.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011011404300_CCheck.cs" />
+    <Compile Include="Migrations\202011011404300_CCheck.Designer.cs">
+      <DependentUpon>202011011404300_CCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011011459242_CCheck Booking.cs" />
+    <Compile Include="Migrations\202011011459242_CCheck Booking.Designer.cs">
+      <DependentUpon>202011011459242_CCheck Booking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Booking\Booking.cs" />
-    <Compile Include="Models\Booking\Location.cs" />
-    <Compile Include="Models\Booking\Package.cs" />
-    <Compile Include="Models\Booking\Service.cs" />
+    <Compile Include="Models\BookingModels\Booking.cs" />
+    <Compile Include="Models\BookingModels\Location.cs" />
+    <Compile Include="Models\BookingModels\Package.cs" />
+    <Compile Include="Models\BookingModels\Service.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PayPal\PaypalConfiguration.cs" />
@@ -442,6 +452,14 @@
     <Content Include="Views\Services\Details.cshtml" />
     <Content Include="Views\Services\Edit.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Bookings\Create.cshtml" />
+    <Content Include="Views\Bookings\Delete.cshtml" />
+    <Content Include="Views\Bookings\Details.cshtml" />
+    <Content Include="Views\Bookings\Edit.cshtml" />
+    <Content Include="Views\Bookings\Index.cshtml" />
+    <Content Include="Views\CustomerBooking\customerBookings.cshtml" />
+    <Content Include="Views\CustomerBooking\MakeBooking.cshtml" />
+    <Content Include="Views\CustomerBooking\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -473,6 +491,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011011333462_Check.resx">
       <DependentUpon>202011011333462_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011011404300_CCheck.resx">
+      <DependentUpon>202011011404300_CCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011011459242_CCheck Booking.resx">
+      <DependentUpon>202011011459242_CCheck Booking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

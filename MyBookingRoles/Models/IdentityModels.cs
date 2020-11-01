@@ -39,25 +39,25 @@ namespace MyBookingRoles.Models
         }
 
         //Store Internal
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.Category> Category { get; set; }
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.Brand> Brands { get; set; }
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.Product> Products { get; set; }
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.Order> Orders { get; set; }
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.OrderDetails> OrderDetails { get; set; }
+        public DbSet<Store.Category> Category { get; set; }
+        public DbSet<Store.Brand> Brands { get; set; }
+        public DbSet<Store.Product> Products { get; set; }
+        public DbSet<Store.Order> Orders { get; set; }
+        public DbSet<Store.OrderDetails> OrderDetails { get; set; }
         //public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.Item> Items { get; set; }
 
         //
-        public virtual DbSet<MyBookingRoles.Models.Booking.Booking> Bookings { get; set; }
+        public virtual DbSet<BookingModels.Booking> Bookings { get; set; }
 
-        public virtual DbSet<MyBookingRoles.Models.Booking.Location> Locations { get; set; }
+        public virtual DbSet<BookingModels.Location> Locations { get; set; }
 
-        public virtual DbSet<MyBookingRoles.Models.Booking.Service> Services { get; set; }
+        public virtual DbSet<BookingModels.Service> Services { get; set; }
 
-        public virtual DbSet<MyBookingRoles.Models.Booking.Package> Packages { get; set; }
+        public virtual DbSet<BookingModels.Package> Packages { get; set; }
 
         //Rate_Service
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.RateService.Rates> Rates { get; set; }
-        public System.Data.Entity.DbSet<MyBookingRoles.Models.RateService.Rate_Service> Rate_Services { get; set; }
+        public DbSet<RateService.Rates> Rates { get; set; }
+        public DbSet<RateService.Rate_Service> Rate_Services { get; set; }
 
     }
 }

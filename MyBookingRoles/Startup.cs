@@ -130,22 +130,22 @@ namespace MyBookingRoles
                 });
 
             context.Packages.AddOrUpdate(p => p.PackageType,
-               new Models.Booking.Package()
+               new Models.BookingModels.Package()
                {
                    PackageType = "Photo Shoot only (R150.00)",
                    PackagePrice = 150
                },
-               new Models.Booking.Package()
+               new Models.BookingModels.Package()
                {
                    PackageType = "Video Shoot only (R300.00)",
                    PackagePrice = 300
                },
-               new Models.Booking.Package()
+               new Models.BookingModels.Package()
                {
                    PackageType = "Photo Shoot & Video Shoot (R2000.00)",
                    PackagePrice = 2000
                },
-               new Models.Booking.Package()
+               new Models.BookingModels.Package()
                {
                    PackageType = "Custom Package (R1500.00)",
                    PackagePrice = 1500
@@ -153,33 +153,43 @@ namespace MyBookingRoles
 
 
             context.Locations.AddOrUpdate(l => l.LocationType,
-               new Models.Booking.Location()
+               new Models.BookingModels.Location()
                {
                    LocationType = "Indoor Studio (R150.00)",
                    LocationPrice = 150
                },
-                new Models.Booking.Location()
+                new Models.BookingModels.Location()
                 {
                     LocationType = "Outdoor Studio / Open Field (R350.00)",
                     LocationPrice = 350
                 },
-                new Models.Booking.Location()
+                new Models.BookingModels.Location()
                 {
                     LocationType = "Hall / Church (R1000.00)",
                     LocationPrice = 1000
                 },
-                new Models.Booking.Location()
+                new Models.BookingModels.Location()
                 {
                     LocationType = "Custom (Own Location) (R1500.00)",
                     LocationPrice = 1500
                 });
             context.Services.AddOrUpdate(l => l.ServiceType,
-               new Models.Booking.Service()
+               new Models.BookingModels.Service()
                {
-                   ServiceType = "House Party",
+                   ServiceType = "Party",
                    ServicePrice = 500
                },
-                new Models.Booking.Service()
+               new Models.BookingModels.Service()
+               {
+                   ServiceType = "Funeral",
+                   ServicePrice = 800
+               },
+               new Models.BookingModels.Service()
+               {
+                   ServiceType = "Photo Shoot",
+                   ServicePrice = 300
+               },
+                new Models.BookingModels.Service()
                 {
                     ServiceType = "Full Wedding",
                     ServicePrice = 1000
