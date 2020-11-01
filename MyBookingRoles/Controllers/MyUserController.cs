@@ -36,7 +36,7 @@ namespace MyBookingRoles.Controllers
         public ActionResult customerOrders(string searchWord)
         {
             var id = User.Identity.GetUserName().ToString();
-            var mm = context.Orders.Where(v => v.CustomerEmail == id && (v.Status.Contains(searchWord) || searchWord == null)).ToList();
+            var mm = context.Orders.Where(v => v.CustomerEmail == id && (v.Status.Contains(searchWord) || searchWord == null) && v.Status != "Cancelled").ToList();
             ViewBag.User = id;
             return View(mm);
         }

@@ -1,19 +1,18 @@
 ﻿@model IEnumerable<MyBookingRoles.Models.BookingModels.Booking>
 @{
-    ViewBag.Title = "customerBookings";
+    ViewBag.Title = "Customer Bookings";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-@using (Html.BeginForm("customerBookings", "MyUser", FormMethod.Get))
+@using (Html.BeginForm("customerBookings", "customerBooking", FormMethod.Get))
 {
     <div class="row" style="background-color: black; padding: 10px;">
         <div class="col-md-2">Bookings Sort</div>
         <div style="text-align:center;">
-            @Html.ActionLink("Processing Bookings", "customerBookings", "MyUser", new { searchWord = "Processing" }, new { @class = "btn  btn-primary" }) |
-            @Html.ActionLink("Approved Bookings", "customerBookings", "MyUser", new { searchWord = "Approved" }, new { @class = "btn  btn-success" }) |
-            @Html.ActionLink("Completed Bookings", "customerBookings", "MyUser", new { searchWord = "Delivered" }, new { @class = "btn  btn-danger" }) |
-            @Html.ActionLink("Cancelled Bookings", "customerBookings", "MyUser", new { searchWord = "Cancelled" }, new { @class = "btn  btn-danger" }) |
-            @Html.ActionLink("Refresh", "customerBookings", "MyUser", null, new { @class = "btn  btn-primary" })
+            @Html.ActionLink("Processing Bookings", "customerBookings", "customerBooking", new { searchWord = "Processing" }, new { @class = "btn  btn-primary" }) |
+            @Html.ActionLink("Approved Bookings", "customerBookings", "customerBooking", new { searchWord = "Approved" }, new { @class = "btn  btn-success" }) |
+            @Html.ActionLink("Completed Bookings", "customerBookings", "customerBooking", new { searchWord = "Delivered" }, new { @class = "btn  btn-danger" }) |
+            @Html.ActionLink("Refresh", "customerBookings", "customerBooking", null, new { @class = "btn  btn-primary" })
         </div>
     </div>
 }
@@ -51,32 +50,33 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Service.ServiceType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArtistID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookingID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BookingID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookingID })
-            </td>
-        </tr>
+        if (item.Status != "Cancelled")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Service.ServiceType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArtistID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.BookingID }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
     }
 
 </table>
-@Html.ActionLink("Back To Home", "Index", "MyUser", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Back To Dashboard", "Index", "MyUser", null, new { @class = "btn btn-primary" })

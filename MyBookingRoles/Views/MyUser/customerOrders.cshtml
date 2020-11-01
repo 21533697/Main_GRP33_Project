@@ -21,7 +21,7 @@
 
 <h3 style="border-top:1px solid black;">
     <b>
-        <u>All Your Orders</u>
+        <u>All Your Orders : <b>@Model.Count()</b></u>
         @*<u class="pull-right">@Html.ActionLink("BIN", "#",null, new { @class="glyphicon-bishop"})</u>*@
     </b>
 
@@ -71,6 +71,12 @@
                 <td style="text-align:center;">
                     @Html.ActionLink("Order Details", "Details", "Orders", new { id = item.OrderId }, new { @class = "btn btn-primary" })
                 </td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>Can not be found.</td>
             </tr>
         }
 

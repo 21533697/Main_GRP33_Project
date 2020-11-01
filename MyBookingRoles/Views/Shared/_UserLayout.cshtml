@@ -39,18 +39,18 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("|", "#", "#")</li>
 
                         if (User.IsInRole("Customer"))
                         {
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("|", "#", "#")</li>
+                            
                             <li>@Html.ActionLink("User Profile", "UserProfile", "MyUser")</li>
                             <li>@Html.ActionLink("|", "#", "#")</li>
                             <li>@Html.ActionLink("Your Cart", "Cart", "ShoppingCart")</li>
                         }
                         else if (User.IsInRole("SuperAdmin"))
                         {
-                            <li>@Html.ActionLink("|", "#", "#")</li>
                             <li>@Html.ActionLink("Super Admin Profile", "SuperAdminProfile", "SuperAdmin")</li>
                             <li>@Html.ActionLink("All App Users", "Index", "AppUsers")</li>
                         }

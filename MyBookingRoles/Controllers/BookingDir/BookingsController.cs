@@ -12,6 +12,7 @@ using MyBookingRoles.Models.BookingModels;
 
 namespace MyBookingRoles.Controllers.BookingDir
 {
+    [Authorize(Roles = "SuperAdmin")]
     public class BookingsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -69,7 +70,7 @@ namespace MyBookingRoles.Controllers.BookingDir
                 booking.LocationVenueFee = booking.calcLocationFee();
                 booking.PackageCost = booking.calcPackageCost();
                 booking.EventFee = booking.calcEventFee();
-                booking.Status = "Booked";
+                booking.Status = "Processing";
                 booking.ArtistRateFee = booking.calcArtistFee();
                 booking.TotalDue = booking.calcTotalDue();
                 booking.Discount = booking.calcDiscount();

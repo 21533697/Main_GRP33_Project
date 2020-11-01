@@ -3,6 +3,7 @@ using MyBookingRoles.Models;
 using MyBookingRoles.Models.BookingModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -10,20 +11,22 @@ using System.Web.Mvc;
 
 namespace MyBookingRoles.Controllers.BookingsManagement
 {
+    [Authorize]
     public class CustomerBookingController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: CustomerBooking
         //Bookings Customer
+        [Authorize(Roles = "Customer")]
         public ActionResult customerBookings(string searchWord)
         {
             var id = User.Identity.GetUserName().ToString();
-            var mm = db.Bookings.Where(v => v.UserID == id && (v.Status.Contains(searchWord) || searchWord == null)).ToList();
+            var mm = db.Bookings.Where(v => v.UserID == id && (v.Status.Contains(searchWord) || searchWord == null) && v.Status != "Cancelled").ToList();
             ViewBag.User = id;
             return View(mm);
         }
-
+        [Authorize(Roles = "Customer")]
         // GET: Bookings/Create
         public ActionResult MakeBooking()
         {
@@ -55,14 +58,14 @@ namespace MyBookingRoles.Controllers.BookingsManagement
                 booking.LocationVenueFee = booking.calcLocationFee();
                 booking.PackageCost = booking.calcPackageCost();
                 booking.EventFee = booking.calcEventFee();
-                booking.Status = "Booked";
+                booking.Status = "Processing";
                 booking.ArtistRateFee = booking.calcArtistFee();
                 booking.TotalDue = booking.calcTotalDue();
                 booking.Discount = booking.calcDiscount();
 
                 db.Bookings.Add(booking);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("BookingSuccess", new { total = booking.TotalDue});
             }
 
             ViewBag.ArtistID = new SelectList(db.Users.Where(a => a.Name == "Artist"), "UserName", "UserName");
@@ -71,8 +74,15 @@ namespace MyBookingRoles.Controllers.BookingsManagement
             ViewBag.ServiceId = new SelectList(db.Services, "ServiceId", "ServiceType", booking.ServiceId);
             return View(booking);
         }
+        [Authorize(Roles = "Customer")]
+        public ActionResult BookingSuccess(double total)
+        {
+            ViewBag.total = total;
+            return View();
+        }
 
         // GET: Bookings/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -86,7 +96,20 @@ namespace MyBookingRoles.Controllers.BookingsManagement
             }
             return View(booking);
         }
+        [Authorize(Roles = "Customer")]
+        public ActionResult CancelBooking(int id)
+        {
+            Booking ord = db.Bookings.Find(id);
+            ord.Status = "Cancelled";
 
+            //string subject = ord.OrderName + " Status Update.";
+            //string body = "<b>Dear " + ord.CustomerName + "<br /><br />Order : " + ord.OrderName + " Your Order Has Been Cancelled. <b /><br /><br /><hr /><b style='color: red'>Please Do not reply</b>.<br /> Thanks & Regards, <br /><b>Studio Foto45!</b>";
+            //ord.SendMail(subject, body);
 
+            db.Entry(ord).State = EntityState.Modified;
+            db.SaveChangesAsync();
+
+            return RedirectToAction("customerBookings", new { id = ord.BookingID });
+        }
     }
 }

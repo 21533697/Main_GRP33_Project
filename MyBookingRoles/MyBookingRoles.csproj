@@ -272,7 +272,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="Documents\Dummy.txt" />
     <Content Include="Documents\MigrationPMC_Doc.txt" />
     <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Acce%3bpted orders.png" />
     <Content Include="Documents\Submission Docs\Sprint 01\screenshots\Add product.png" />
@@ -460,6 +459,8 @@
     <Content Include="Views\CustomerBooking\customerBookings.cshtml" />
     <Content Include="Views\CustomerBooking\MakeBooking.cshtml" />
     <Content Include="Views\CustomerBooking\Details.cshtml" />
+    <Content Include="Views\CustomerBooking\BookingSuccess.cshtml" />
+    <Content Include="Views\Artist\ArtistBookings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
