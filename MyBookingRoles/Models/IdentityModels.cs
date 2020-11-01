@@ -46,6 +46,15 @@ namespace MyBookingRoles.Models
         public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.OrderDetails> OrderDetails { get; set; }
         //public System.Data.Entity.DbSet<MyBookingRoles.Models.Store.Item> Items { get; set; }
 
+        //
+        public virtual DbSet<MyBookingRoles.Models.Booking.Booking> Bookings { get; set; }
+
+        public virtual DbSet<MyBookingRoles.Models.Booking.Location> Locations { get; set; }
+
+        public virtual DbSet<MyBookingRoles.Models.Booking.Service> Services { get; set; }
+
+        public virtual DbSet<MyBookingRoles.Models.Booking.Package> Packages { get; set; }
+
         //Rate_Service
         public System.Data.Entity.DbSet<MyBookingRoles.Models.RateService.Rates> Rates { get; set; }
         public System.Data.Entity.DbSet<MyBookingRoles.Models.RateService.Rate_Service> Rate_Services { get; set; }

@@ -128,6 +128,62 @@ namespace MyBookingRoles
                     Name = "Apple",
                     isVisible = true
                 });
+
+            context.Packages.AddOrUpdate(p => p.PackageType,
+               new Models.Booking.Package()
+               {
+                   PackageType = "Photo Shoot only (R150.00)",
+                   PackagePrice = 150
+               },
+               new Models.Booking.Package()
+               {
+                   PackageType = "Video Shoot only (R300.00)",
+                   PackagePrice = 300
+               },
+               new Models.Booking.Package()
+               {
+                   PackageType = "Photo Shoot & Video Shoot (R2000.00)",
+                   PackagePrice = 2000
+               },
+               new Models.Booking.Package()
+               {
+                   PackageType = "Custom Package (R1500.00)",
+                   PackagePrice = 1500
+               });
+
+
+            context.Locations.AddOrUpdate(l => l.LocationType,
+               new Models.Booking.Location()
+               {
+                   LocationType = "Indoor Studio (R150.00)",
+                   LocationPrice = 150
+               },
+                new Models.Booking.Location()
+                {
+                    LocationType = "Outdoor Studio / Open Field (R350.00)",
+                    LocationPrice = 350
+                },
+                new Models.Booking.Location()
+                {
+                    LocationType = "Hall / Church (R1000.00)",
+                    LocationPrice = 1000
+                },
+                new Models.Booking.Location()
+                {
+                    LocationType = "Custom (Own Location) (R1500.00)",
+                    LocationPrice = 1500
+                });
+            context.Services.AddOrUpdate(l => l.ServiceType,
+               new Models.Booking.Service()
+               {
+                   ServiceType = "House Party",
+                   ServicePrice = 500
+               },
+                new Models.Booking.Service()
+                {
+                    ServiceType = "Full Wedding",
+                    ServicePrice = 1000
+                });
             //Save Changes
             context.SaveChanges();
         }

@@ -193,6 +193,9 @@
     <Compile Include="Controllers\AppUsersController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\BookingsManagement\BookingManagementController.cs" />
+    <Compile Include="Controllers\Booking\LocationsController.cs" />
+    <Compile Include="Controllers\Booking\PackagesController.cs" />
+    <Compile Include="Controllers\Booking\ServicesController.cs" />
     <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\DeliverySystem\DeliverySystemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -212,80 +215,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009022021118_BrandVisibility.cs" />
-    <Compile Include="Migrations\202009022021118_BrandVisibility.Designer.cs">
-      <DependentUpon>202009022021118_BrandVisibility.cs</DependentUpon>
+    <Compile Include="Migrations\202011011251056_Bookings.cs" />
+    <Compile Include="Migrations\202011011251056_Bookings.Designer.cs">
+      <DependentUpon>202011011251056_Bookings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010070926220_NewFieldsAndDiscount.cs" />
-    <Compile Include="Migrations\202010070926220_NewFieldsAndDiscount.Designer.cs">
-      <DependentUpon>202010070926220_NewFieldsAndDiscount.cs</DependentUpon>
+    <Compile Include="Migrations\202011011301102_Booking.cs" />
+    <Compile Include="Migrations\202011011301102_Booking.Designer.cs">
+      <DependentUpon>202011011301102_Booking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010070931063_NewFieldsRena.cs" />
-    <Compile Include="Migrations\202010070931063_NewFieldsRena.Designer.cs">
-      <DependentUpon>202010070931063_NewFieldsRena.cs</DependentUpon>
+    <Compile Include="Migrations\202011011303048_Book.cs" />
+    <Compile Include="Migrations\202011011303048_Book.Designer.cs">
+      <DependentUpon>202011011303048_Book.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010070949383_NewFields.cs" />
-    <Compile Include="Migrations\202010070949383_NewFields.Designer.cs">
-      <DependentUpon>202010070949383_NewFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010070952360_ExtraNewFields.cs" />
-    <Compile Include="Migrations\202010070952360_ExtraNewFields.Designer.cs">
-      <DependentUpon>202010070952360_ExtraNewFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010071203210_ExNewFields.cs" />
-    <Compile Include="Migrations\202010071203210_ExNewFields.Designer.cs">
-      <DependentUpon>202010071203210_ExNewFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010072152403_dontknow.cs" />
-    <Compile Include="Migrations\202010072152403_dontknow.Designer.cs">
-      <DependentUpon>202010072152403_dontknow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010132052168_null.cs" />
-    <Compile Include="Migrations\202010132052168_null.Designer.cs">
-      <DependentUpon>202010132052168_null.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010132146055_Some Changes.cs" />
-    <Compile Include="Migrations\202010132146055_Some Changes.Designer.cs">
-      <DependentUpon>202010132146055_Some Changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010212009240_featandspecial.cs" />
-    <Compile Include="Migrations\202010212009240_featandspecial.Designer.cs">
-      <DependentUpon>202010212009240_featandspecial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010252013101_Discount.cs" />
-    <Compile Include="Migrations\202010252013101_Discount.Designer.cs">
-      <DependentUpon>202010252013101_Discount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010252021382_Discount delet model.cs" />
-    <Compile Include="Migrations\202010252021382_Discount delet model.Designer.cs">
-      <DependentUpon>202010252021382_Discount delet model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010261338572_nameP.cs" />
-    <Compile Include="Migrations\202010261338572_nameP.Designer.cs">
-      <DependentUpon>202010261338572_nameP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010281111043_Order_Alter.cs" />
-    <Compile Include="Migrations\202010281111043_Order_Alter.Designer.cs">
-      <DependentUpon>202010281111043_Order_Alter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010302037104_ProdsDateAdded.cs" />
-    <Compile Include="Migrations\202010302037104_ProdsDateAdded.Designer.cs">
-      <DependentUpon>202010302037104_ProdsDateAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010302053372_Date Time.cs" />
-    <Compile Include="Migrations\202010302053372_Date Time.Designer.cs">
-      <DependentUpon>202010302053372_Date Time.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010311046106_FeaturedProd.cs" />
-    <Compile Include="Migrations\202010311046106_FeaturedProd.Designer.cs">
-      <DependentUpon>202010311046106_FeaturedProd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011011136520_Check.cs" />
-    <Compile Include="Migrations\202011011136520_Check.Designer.cs">
-      <DependentUpon>202011011136520_Check.cs</DependentUpon>
+    <Compile Include="Migrations\202011011333462_Check.cs" />
+    <Compile Include="Migrations\202011011333462_Check.Designer.cs">
+      <DependentUpon>202011011333462_Check.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Booking\Booking.cs" />
+    <Compile Include="Models\Booking\Location.cs" />
+    <Compile Include="Models\Booking\Package.cs" />
+    <Compile Include="Models\Booking\Service.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PayPal\PaypalConfiguration.cs" />
@@ -476,6 +427,21 @@
     <Content Include="Views\Artist\ArtistDashboard.cshtml" />
     <Content Include="Views\DeliverySystem\RegisterDelivery.cshtml" />
     <Content Include="Views\BookingManagement\Internals.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Packages\Create.cshtml" />
+    <Content Include="Views\Packages\Delete.cshtml" />
+    <Content Include="Views\Packages\Details.cshtml" />
+    <Content Include="Views\Packages\Edit.cshtml" />
+    <Content Include="Views\Packages\Index.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -496,59 +462,17 @@
     <Folder Include="Views\Discount\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009022021118_BrandVisibility.resx">
-      <DependentUpon>202009022021118_BrandVisibility.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011011251056_Bookings.resx">
+      <DependentUpon>202011011251056_Bookings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010070926220_NewFieldsAndDiscount.resx">
-      <DependentUpon>202010070926220_NewFieldsAndDiscount.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011011301102_Booking.resx">
+      <DependentUpon>202011011301102_Booking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010070931063_NewFieldsRena.resx">
-      <DependentUpon>202010070931063_NewFieldsRena.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011011303048_Book.resx">
+      <DependentUpon>202011011303048_Book.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010070949383_NewFields.resx">
-      <DependentUpon>202010070949383_NewFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010070952360_ExtraNewFields.resx">
-      <DependentUpon>202010070952360_ExtraNewFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010071203210_ExNewFields.resx">
-      <DependentUpon>202010071203210_ExNewFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010072152403_dontknow.resx">
-      <DependentUpon>202010072152403_dontknow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010132052168_null.resx">
-      <DependentUpon>202010132052168_null.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010132146055_Some Changes.resx">
-      <DependentUpon>202010132146055_Some Changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010212009240_featandspecial.resx">
-      <DependentUpon>202010212009240_featandspecial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010252013101_Discount.resx">
-      <DependentUpon>202010252013101_Discount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010252021382_Discount delet model.resx">
-      <DependentUpon>202010252021382_Discount delet model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010261338572_nameP.resx">
-      <DependentUpon>202010261338572_nameP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010281111043_Order_Alter.resx">
-      <DependentUpon>202010281111043_Order_Alter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010302037104_ProdsDateAdded.resx">
-      <DependentUpon>202010302037104_ProdsDateAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010302053372_Date Time.resx">
-      <DependentUpon>202010302053372_Date Time.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010311046106_FeaturedProd.resx">
-      <DependentUpon>202010311046106_FeaturedProd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011011136520_Check.resx">
-      <DependentUpon>202011011136520_Check.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011011333462_Check.resx">
+      <DependentUpon>202011011333462_Check.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
