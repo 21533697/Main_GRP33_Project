@@ -3426,3 +3426,4 @@ C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBo
 C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.Check.resources
 C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.CCheck.resources
 C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.CCheckBooking.resources
+C:\Users\koolj\Documents\GitHub\Main_GRP33_Project\MyBookingRoles\obj\Debug\MyBookingRoles.Migrations.appusertt.resources

@@ -11,9 +11,9 @@ namespace MyBookingRoles.Models.BookingModels
         [Key]
         public int BookingID { get; set; }
 
-        [Display(Name = "Username")]
+        [Display(Name = "Your Username")]
         public string UserID { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        //public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
         [Display(Name = "Artist Username")]

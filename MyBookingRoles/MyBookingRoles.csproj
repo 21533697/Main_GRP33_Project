@@ -241,6 +241,10 @@
     <Compile Include="Migrations\202011011459242_CCheck Booking.Designer.cs">
       <DependentUpon>202011011459242_CCheck Booking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011020452512_appusertt.cs" />
+    <Compile Include="Migrations\202011020452512_appusertt.Designer.cs">
+      <DependentUpon>202011020452512_appusertt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookingModels\Booking.cs" />
@@ -498,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011011459242_CCheck Booking.resx">
       <DependentUpon>202011011459242_CCheck Booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011020452512_appusertt.resx">
+      <DependentUpon>202011020452512_appusertt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
